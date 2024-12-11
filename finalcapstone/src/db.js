@@ -1,8 +1,8 @@
 const { Sequelize } = require('sequelize');
 
 // Konfigurasi koneksi database
-const sequelize = new Sequelize('cek_apel', 'root', 'Adminapel12', {
-    host: '35.247.177.225',
+const sequelize = new Sequelize('cek_apel', 'root', '', {
+    host: '',
     dialect: 'mysql', // Gunakan dialect MySQL
     logging: false, // Nonaktifkan log query, opsional
 });
