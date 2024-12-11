@@ -1,23 +1,23 @@
-# Artikel dan Prediksi API
+# Article and Prediction API
 
-API ini digunakan untuk mengelola artikel dan melakukan prediksi klasifikasi gambar menggunakan model machine learning.
+This API is used to manage articles and perform image classification predictions using a machine learning model.
 
-## Fitur
-- Mendapatkan semua artikel
-- Menambahkan artikel baru dengan gambar
-- Memperbarui artikel berdasarkan nama
-- Melakukan prediksi klasifikasi gambar
+## Features
+- Retrieve all articles
+- Add new articles with images
+- Update articles by name
+- Perform image classification predictions
 
-## Menjalankan Server
-Server ini dideploy ke Google Cloud Platform (GCP) menggunakan App Engine. 
+## Running the Server
+The server is deployed on Google Cloud Platform (GCP) using App Engine.
 
-## Dokumentasi API
+## API Documentation
 
-### 1. Mendapatkan Semua Artikel
+### 1. Retrieve All Articles
 **GET** `/artikels`
 
-- **Deskripsi:** Mendapatkan daftar semua artikel.
-- **Respons:**
+- **Description:** Retrieve a list of all articles.
+- **Response:**
   ```json
   {
     "status": "success",
@@ -33,38 +33,38 @@ Server ini dideploy ke Google Cloud Platform (GCP) menggunakan App Engine.
   }
   ```
 
-### 2. Menambahkan Artikel Baru
+### 2. Add New Article
 **POST** `/artikels`
 
-- **Deskripsi:** Menambahkan artikel baru dengan gambar.
+- **Description:** Add a new article with an image.
 - **Body:**
   - `nama` (string)
   - `deskripsi` (string)
   - `penangananPenyakit` (string)
   - `image` (file)
-- **Respons:**
-  - `201`: Artikel berhasil ditambahkan
-  - `409`: Artikel dengan nama yang sama sudah ada
+- **Response:**
+  - `201`: Article successfully added
+  - `409`: Article with the same name already exists
 
-### 3. Memperbarui Artikel
+### 3. Update Article
 **PUT** `/artikels/{nama}`
 
-- **Deskripsi:** Memperbarui artikel berdasarkan nama.
+- **Description:** Update an article by name.
 - **Body:**
   - `deskripsi` (string, optional)
   - `penangananPenyakit` (string, optional)
   - `image` (file, optional)
-- **Respons:**
-  - `200`: Artikel berhasil diperbarui
-  - `404`: Artikel tidak ditemukan
+- **Response:**
+  - `200`: Article successfully updated
+  - `404`: Article not found
 
-### 4. Prediksi Klasifikasi Gambar
+### 4. Perform Image Classification Prediction
 **POST** `/predict`
 
-- **Deskripsi:** Melakukan prediksi klasifikasi gambar.
+- **Description:** Perform image classification prediction.
 - **Body:**
   - `image` (file)
-- **Respons:**
+- **Response:**
   ```json
   {
     "status": "success",
@@ -80,14 +80,14 @@ Server ini dideploy ke Google Cloud Platform (GCP) menggunakan App Engine.
   }
   ```
 
-## Dependensi
+## Dependencies
 - **Node.js**
 - **Hapi.js**
-- **Sequelize** (ORM untuk database)
-- **GCP Bucket SDK** (untuk unggah gambar)
+- **Sequelize** (ORM for database)
+- **GCP Bucket SDK** (for image uploads)
 
-## Pengaturan Lingkungan
-Buat file `.env` di root proyek dan tambahkan konfigurasi berikut:
+## Environment Configuration
+Create a `.env` file in the project root and add the following configurations:
 
 ```env
 DB_HOST=
@@ -97,13 +97,13 @@ DB_NAME=
 GCP_BUCKET_NAME=
 MODEL_PATH=
 ```
+
 ## Cloud Architecture
-Berikut adalah arsitektur cloud yang digunakan dalam proyek ini:
+The following is the cloud architecture used in this project:
 
 ![Cloud Architecture](https://github.com/CekApel/cloud_computing/blob/b4257ed3c2adbde9fd9f003636c99f28d5c161f4/CloudArchi.png)
 
 ## ML Deployment Architecture
-Berikut adalah arsitektur deployment model machine learning:
+The following is the machine learning model deployment architecture:
 
 ![ML Deployment Architecture](https://github.com/CekApel/cloud_computing/blob/b4257ed3c2adbde9fd9f003636c99f28d5c161f4/mlArchi.png)
-
