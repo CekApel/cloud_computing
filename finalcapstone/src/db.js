@@ -1,8 +1,8 @@
 const { Sequelize } = require('sequelize');
 
 // Konfigurasi koneksi database
-const sequelize = new Sequelize('cek_apel', 'root', '', {
-    host: '',
+const sequelize = new Sequelize('dbname', 'user', 'password', {
+    host: 'host',
     dialect: 'mysql', // Gunakan dialect MySQL
     logging: false, // Nonaktifkan log query, opsional
 });
