@@ -97,4 +97,13 @@ DB_NAME=
 GCP_BUCKET_NAME=
 MODEL_PATH=
 ```
+## Cloud Architecture
+Berikut adalah arsitektur cloud yang digunakan dalam proyek ini:
+
+![Cloud Architecture](https://github.com/CekApel/cloud_computing/blob/b4257ed3c2adbde9fd9f003636c99f28d5c161f4/CloudArchi.png)
+
+## ML Deployment Architecture
+Berikut adalah arsitektur deployment model machine learning:
+
+![ML Deployment Architecture](https://github.com/CekApel/cloud_computing/blob/b4257ed3c2adbde9fd9f003636c99f28d5c161f4/mlArchi.png)
 
